@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>과제 관리</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  <script>
+    function confirmDelete(filepath) {
+      if (confirm("정말 이 파일을 삭제하시겠습니까?")) {
+        const form = document.createElement('form');
+        form.method = 'POST';
+        form.action = '/assignment/delete';
+        const input = document.createElement('input');
+        input.type = 'hidden';
+        input.name = 'filepath';
+        input.value = filepath;
+        form.appendChild(input);
+        document.body.appendChild(form);
+        form.submit();
+      }
+    }
+  </script>
+</head>
+<body>
+  <div class="container">
+    <h1>과제 조회</h1>
+    <p><a href="/">← 홈으로</a></p>
+
+    {% if error %}
+      <div class="error">{{ error }}</div>
+    {% endif %}
+
+    {% if results %}
+      <h3>검색 결과:</h3>
+      <ul class="results">
+        {% for path in results %}
+          <li>
+            <span>{{ path }}</span>
+            <a href="javascript:void(0);" onclick='confirmDelete({{ path|tojson }})'>삭제</a>
+          </li>
+        {% endfor %}
+      </ul>
+    {% elif query and not error %}
+      <p>검색 결과가 없습니다.</p>
+    {% endif %}
+  </div>
+</body>
+</html>

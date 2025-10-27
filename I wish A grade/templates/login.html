@@ -1,0 +1,82 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>로그인</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  <style>
+    .login-container {
+      background: #fff;
+      padding: 40px 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+      max-width: 400px;
+      width: 100%;
+      margin: 60px auto;
+    }
+    .login-container h1 {
+      text-align: center;
+      margin-bottom: 25px;
+      color: #333;
+    }
+    .login-container form {
+      display: flex;
+      flex-direction: column;
+    }
+    .login-container label {
+      margin-bottom: 15px;
+      font-size: 14px;
+      color: #555;
+    }
+    .login-container input {
+      width: 100%;
+      padding: 10px 12px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 14px;
+      box-sizing: border-box;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+    .login-container input:focus {
+      border-color: #007bff;
+      box-shadow: 0 0 5px rgba(0,123,255,0.3);
+      outline: none;
+    }
+    .login-container button {
+      margin-top: 10px;
+      padding: 10px;
+      border: none;
+      border-radius: 6px;
+      background-color: #007bff;
+      color: #fff;
+      font-size: 15px;
+      cursor: pointer;
+      transition: background-color 0.2s;
+    }
+    .login-container button:hover {
+      background-color: #0056b3;
+    }
+    .login-container .error {
+      margin-bottom: 15px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="login-container">
+    <h1>로그인</h1>
+    {% if error %}
+      <p class="error">{{ error }}</p>
+    {% endif %}
+    <form method="post">
+      <label>아이디:
+        <input name="username" required>
+      </label>
+      <label>비밀번호:
+        <input name="password" type="password" required>
+      </label>
+      <button type="submit">로그인</button>
+    </form>
+  </div>
+</body>
+</html>
