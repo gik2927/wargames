@@ -1,0 +1,73 @@
+body { 
+    font-family: 'Noto Sans KR', 'Segoe UI', sans-serif;
+    text-align: center; 
+    padding-top: 50px; 
+    background-color: #fff3e0; 
+    color: #5d4037;
+    font-size: 18px; 
+}
+
+.shop-sign {
+    font-size: 3rem;
+    color: #ff9800;
+    text-shadow: 2px 2px #ffcc80;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+.box { 
+    border: 4px dashed #ff9800;
+    display: inline-block; 
+    padding: 32px; 
+    border-radius: 20px; 
+    background-color: #ffffff;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+    max-width: 600px;
+    width: 90%;
+}
+
+.status-badge {
+    display: inline-block;
+    padding: 6px 18px;
+    border-radius: 20px;
+    background-color: #eceff1;
+    font-weight: 600;
+    font-size: 1.4rem;
+}
+
+.vip-status { 
+    background-color: #ffecb3; 
+    color: #ff6f00; 
+}
+
+.fail-msg { 
+    color: #8d6e63; 
+    margin-top: 20px;
+    font-size: 1.4rem; 
+    font-weight: 500;
+}
+
+.success-msg { 
+    color: #e65100; 
+    font-size: 1.6rem; 
+    font-weight: 700; 
+    background-color: #fff8e1; 
+    padding: 20px; 
+    border-radius: 15px;
+    line-height: 1.5; 
+}
+
+button {
+    background-color: #ff9800; 
+    color: white; 
+    border: none; 
+    padding: 14px 26px;
+    border-radius: 10px; 
+    cursor: pointer; 
+    font-size: 1.4rem;
+    font-weight: 600;
+}
+
+button:hover { 
+    background-color: #f57c00; 
+}

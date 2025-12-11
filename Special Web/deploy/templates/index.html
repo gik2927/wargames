@@ -1,0 +1,34 @@
+
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>🍊 GYUL COOKIE STORE 🍪</title>
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1 class="shop-sign">🍊 GYUL COOKIE STORE 🍪</h1>
+    <div class="box">
+        <h2>어서오세요! 신선한 쿠키가 구워졌어요.</h2>
+        <p>당신의 회원 등급: 
+            {% if membership == 'vip' %}
+                <span class="status-badge vip-status">✨VIP✨</span>
+            {% else %}
+                <span class="status-badge">일반 회원 ({{ membership }})</span>
+            {% endif %}
+        </p>
+        <hr>
+        {% if membership == 'vip' %}
+            <div class="success-msg">
+                🍊 VIP MENU 🍊<br>
+                B1N4RY{**redacted**}
+            </div>
+        {% else %}
+            <div class="fail-msg">
+                <p>✨VIP✨ 전용 쿠키가 존재합니다!</p>
+            </div>
+        {% endif %}
+    </div>
+</body>
+</html>
